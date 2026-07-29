@@ -1,0 +1,19 @@
+node_modules/
+web/node_modules/
+web/dist/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+data/records.json
+.firecrawl/
+
+# generated locally (rendered from the Markdown)
+TUTORIAL.html
+TUTORIAL.rendered.html
+README.html
+
+# editor / agent local state
+.claude/
+COMPARISON.html

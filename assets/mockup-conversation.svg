@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 640" width="1040" height="640" role="img" aria-label="Illustrative mockup of the assistant conversation and the guard log">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4b57d6"/><stop offset="1" stop-color="#5468ff"/>
+    </linearGradient>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1040" height="640" fill="#eef0f6"/>
+
+  <!-- honest label -->
+  <text x="24" y="34" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#5468ff">ILLUSTRATIVE MOCKUP</text>
+  <text x="212" y="34" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" fill="#6b7280">— shows the intended flow and log output, not a live screenshot (the demo has not been run against a live Algolia account).</text>
+
+  <!-- chat window -->
+  <g filter="url(#sh)">
+    <rect x="24" y="52" width="600" height="500" rx="14" fill="#ffffff"/>
+    <rect x="24" y="52" width="600" height="46" rx="14" fill="url(#hdr)"/>
+    <rect x="24" y="80" width="600" height="18" fill="url(#hdr)"/>
+    <circle cx="48" cy="75" r="6" fill="#ffffff" opacity="0.9"/>
+    <text x="66" y="80" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#fff">Shopping assistant</text>
+  </g>
+
+  <g font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14">
+    <!-- user 1 -->
+    <rect x="250" y="116" width="352" height="44" rx="12" fill="#5468ff"/>
+    <text x="270" y="143" fill="#fff">a lightweight camera under $300 for travel</text>
+
+    <!-- assistant 1: product card -->
+    <rect x="46" y="176" width="430" height="120" rx="12" fill="#f4f5f9"/>
+    <text x="66" y="202" fill="#374151">Here's a good match from our catalog:</text>
+    <rect x="66" y="214" width="64" height="64" rx="8" fill="#dfe3ee"/>
+    <text x="88" y="251" fill="#9aa3b2" font-size="11">img</text>
+    <text x="148" y="234" fill="#111827" font-weight="700">Compact Travel Camera</text>
+    <text x="148" y="256" fill="#6b7280" font-size="13">Verified in catalog · objectID confirmed</text>
+    <text x="148" y="276" fill="#111827" font-weight="700" font-size="15">$279</text>
+
+    <!-- user 2 -->
+    <rect x="286" y="316" width="316" height="44" rx="12" fill="#5468ff"/>
+    <text x="306" y="343" fill="#fff">do you sell a Rolex Submariner?</text>
+
+    <!-- assistant 2: refusal -->
+    <rect x="46" y="376" width="470" height="86" rx="12" fill="#fdeaea"/>
+    <text x="66" y="404" fill="#9b1c1c">No — that isn't in our catalog, so I can't sell you one.</text>
+    <text x="66" y="428" fill="#9b1c1c">I only recommend products I can verify. Want me to</text>
+    <text x="66" y="448" fill="#9b1c1c">show the watches we do carry instead?</text>
+
+    <!-- input bar -->
+    <rect x="46" y="486" width="556" height="42" rx="21" fill="#f0f1f5" stroke="#e2e4ec"/>
+    <text x="70" y="512" fill="#9aa3b2">Ask about anything in the catalog…</text>
+  </g>
+
+  <!-- terminal / guard log -->
+  <g filter="url(#sh)">
+    <rect x="648" y="52" width="368" height="500" rx="14" fill="#0f1021"/>
+    <circle cx="672" cy="76" r="6" fill="#ff5f56"/><circle cx="692" cy="76" r="6" fill="#ffbd2e"/><circle cx="712" cy="76" r="6" fill="#27c93f"/>
+    <text x="742" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b90a5">server — npm run dev:server</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12.5" fill="#e6e6f0">
+    <text x="668" y="120" fill="#7f86a3">Proxy listening on http://localhost:8787</text>
+    <text x="668" y="150" fill="#5eead4">POST /api/chat  → completions (stream)</text>
+    <text x="668" y="180" fill="#c7cbe0">[verify_product_exists]</text>
+    <text x="668" y="200" fill="#4ade80">  1755... → FOUND ("Compact Travel Camera")</text>
+    <text x="668" y="238" fill="#5eead4">POST /api/chat  → completions (stream)</text>
+    <text x="668" y="268" fill="#c7cbe0">[verify_product_exists]</text>
+    <text x="668" y="288" fill="#f87171">  (guessed id) → NOT FOUND (guard refused)</text>
+    <text x="668" y="326" fill="#7f86a3">← assistant declines, no product invented</text>
+    <text x="668" y="372" fill="#4b5164">— the guard is the gate every</text>
+    <text x="668" y="392" fill="#4b5164">  answer has to pass —</text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "name": "grounded-shopping-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A grounded conversational shopping assistant on Algolia Agent Studio",
+  "type": "module",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "index": "tsx scripts/index-catalog.ts",
+    "eval": "tsx scripts/eval.ts",
+    "agent:deploy": "tsx agent/deploy-agent.ts",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "npm --prefix web run dev",
+    "web:install": "npm --prefix web install",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "algoliasearch": "5.56.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0"
+  }
+}
